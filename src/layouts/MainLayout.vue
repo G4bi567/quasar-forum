@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hhh LpR fff">
-    <q-header reveal elevated class="bg-primary text-white" height-hint="98">
+    <q-header reveal elevated class="bg-black text-white" height-hint="98">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
@@ -8,7 +8,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
-          Title
+          Forum Csud
         </q-toolbar-title>
 
         <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
