@@ -1,6 +1,12 @@
 <template>
   <q-layout view="hhh LpR fff">
-    <q-header reveal elevated class="bg-black text-white" height-hint="98">
+    <q-header
+      reveal
+      elevated
+      class="bg-black text-white"
+      height-hint="98"
+      style="padding: 5px 10px"
+    >
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-tabs align="left">
@@ -22,6 +28,7 @@
           height="1px"
           rounded
           outlined
+          color="black"
           bg-color="white"
           v-model="text"
           label="Rounded outlined"
