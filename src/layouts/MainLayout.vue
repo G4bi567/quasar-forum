@@ -9,6 +9,7 @@
     >
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+
         <q-tabs align="left">
           <q-route-tab to="/" label="Home page" />
           <q-route-tab to="/One" label="Page One" />
@@ -27,14 +28,25 @@
           />
           Forum Csud
         </q-toolbar-title>
+
         <q-input
-          rounded
-          outlined
-          color="black"
-          bg-color="white"
+          dark
+          dense
+          standout
           v-model="text"
-          label="Rounded outlined"
-        />
+          input-class="text-right"
+          class="q-ml-md"
+        >
+          <template v-slot:append>
+            <q-icon v-if="text === ''" name="search" />
+            <q-icon
+              v-else
+              name="clear"
+              class="cursor-pointer"
+              @click="text = ''"
+            />
+          </template>
+        </q-input>
 
         <q-fab
           v-model="fab2"
@@ -98,7 +110,15 @@
       behavior="desktop"
       bordered
     >
-      <!-- drawer content -->
+      <q-list>
+        <q-item-label header>hahahaahah</q-item-label>
+
+        <EssentialLink
+          v-for="link in essentialLinks"
+          :key="link.title"
+          v-bind="link"
+        />
+      </q-list>
     </q-drawer>
 
     <q-drawer
@@ -108,7 +128,6 @@
       behavior="desktop"
       elevated
     >
-      <!-- drawer content -->
     </q-drawer>
 
     <q-page-container>
@@ -122,9 +141,61 @@
 }
 </style>
 <script>
-import { ref } from 'vue';
+import { defineComponent, ref } from 'vue';
+import EssentialLink from 'components/EssentialLink.vue';
 
-export default {
+const linksList = [
+  {
+    title: 'Docs',
+    caption: 'quasar.dev',
+    icon: 'school',
+    link: 'https://quasar.dev',
+  },
+  {
+    title: 'Github',
+    caption: 'github.com/quasarframework',
+    icon: 'code',
+    link: 'https://github.com/quasarframework',
+  },
+  {
+    title: 'Discord Chat Channel',
+    caption: 'chat.quasar.dev',
+    icon: 'chat',
+    link: 'https://chat.quasar.dev',
+  },
+  {
+    title: 'Forum',
+    caption: 'forum.quasar.dev',
+    icon: 'record_voice_over',
+    link: 'https://forum.quasar.dev',
+  },
+  {
+    title: 'Twitter',
+    caption: '@quasarframework',
+    icon: 'rss_feed',
+    link: 'https://twitter.quasar.dev',
+  },
+  {
+    title: 'Facebook',
+    caption: '@QuasarFramework',
+    icon: 'public',
+    link: 'https://facebook.quasar.dev',
+  },
+  {
+    title: 'Quasar Awesome',
+    caption: 'Community Quasar projects',
+    icon: 'favorite',
+    link: 'https://awesome.quasar.dev',
+  },
+];
+
+export default defineComponent({
+  name: 'MainLayout',
+
+  components: {
+    EssentialLink,
+  },
+
   setup() {
     const leftDrawerOpen = ref(false);
     const rightDrawerOpen = ref(false);
@@ -141,5 +212,5 @@ export default {
       },
     };
   },
-};
+});
 </script>
