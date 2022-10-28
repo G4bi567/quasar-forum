@@ -17,10 +17,14 @@
         </q-tabs>
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="~assets/logo_variante.png" />
-          </q-avatar>
-
+          <img
+            bg-color="white"
+            vertical-middle
+            style="height: 30px; background-color: white
+            radius-border: 20px;"
+            class="logo"
+            src="~assets/logo_variante.png"
+          />
           Forum Csud
         </q-toolbar-title>
         <q-input
@@ -37,10 +41,11 @@
           label="Actions"
           external-label
           vertical-actions-align="left"
-          color="red"
-          icon="keyboard_arrow_down"
+          color="none"
+          icon="none"
           direction="down"
           :hide-label="hideLabels"
+          style="background-image: url('~assets/upscale-245339439045212.png')"
         >
           <q-fab-action
             :hide-label="hideLabels"
@@ -111,7 +116,11 @@
     </q-page-container>
   </q-layout>
 </template>
-
+<style>
+.logo {
+  height: 30px;
+}
+</style>
 <script>
 import { ref } from 'vue';
 
