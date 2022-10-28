@@ -3,22 +3,81 @@
     <q-header reveal elevated class="bg-black text-white" height-hint="98">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+        <q-tabs align="left">
+          <q-route-tab to="/" label="Home page" />
+          <q-route-tab to="/One" label="Page One" />
+          <q-route-tab to="/Two" label="Page Two" />
+          <q-route-tab to="/Three" label="Page Three" />
+        </q-tabs>
 
         <q-toolbar-title>
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
           </q-avatar>
+
           Forum Csud
         </q-toolbar-title>
+        <q-input
+          width="30px"
+          rounded
+          outlined
+          bg-color="white"
+          v-model="text"
+          label="Rounded outlined"
+        />
 
-        <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+        <q-fab
+          v-model="fab2"
+          label="Actions"
+          external-label
+          vertical-actions-align="left"
+          color="purple"
+          icon="keyboard_arrow_down"
+          direction="down"
+          :hide-label="hideLabels"
+        >
+          <q-fab-action
+            :hide-label="hideLabels"
+            external-label
+            color="primary"
+            @click="onClick"
+            icon="mail"
+            label="Email"
+          />
+          <q-fab-action
+            :hide-label="hideLabels"
+            external-label
+            color="secondary"
+            @click="onClick"
+            icon="alarm"
+            label="Alarm"
+          />
+          <q-fab-action
+            :hide-label="hideLabels"
+            external-label
+            color="orange"
+            @click="onClick"
+            icon="airplay"
+            label="Airplay"
+          />
+          <q-fab-action
+            :hide-label="hideLabels"
+            external-label
+            color="accent"
+            @click="onClick"
+            icon="room"
+            label="Map"
+          />
+        </q-fab>
+        <q-btn
+          dense
+          flat
+          round
+          icon="menu"
+          @click="toggleRightDrawer"
+          style="margin-left: 20px"
+        />
       </q-toolbar>
-
-      <q-tabs align="left">
-        <q-route-tab to="/One" label="Page One" />
-        <q-route-tab to="/Two" label="Page Two" />
-        <q-route-tab to="/Three" label="Page Three" />
-      </q-tabs>
     </q-header>
 
     <q-drawer
