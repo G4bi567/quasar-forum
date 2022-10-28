@@ -24,8 +24,6 @@
           Forum Csud
         </q-toolbar-title>
         <q-input
-          width="30px"
-          height="1px"
           rounded
           outlined
           color="black"
