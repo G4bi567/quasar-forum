@@ -1,9 +1,10 @@
 <template>
-  <div class="row justify-center">
-    <h1>Bonjour</h1>
+  <div style="margin: 20px">
+    <Post />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import Post from 'components/PostLayer.vue';
 </script>
