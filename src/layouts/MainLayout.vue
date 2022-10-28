@@ -18,7 +18,7 @@
 
         <q-toolbar-title>
           <q-avatar>
-            <img src="@/src/assets/logo_variante.png" />
+            <img src="~assets/logo_variante.png" />
           </q-avatar>
 
           Forum Csud
@@ -37,7 +37,7 @@
           label="Actions"
           external-label
           vertical-actions-align="left"
-          color="purple"
+          color="red"
           icon="keyboard_arrow_down"
           direction="down"
           :hide-label="hideLabels"
