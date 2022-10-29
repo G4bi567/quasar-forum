@@ -1,9 +1,22 @@
 <template>
-  <q-timeline-entry :title="problem_title" :subtitle="date" :avatar="pp_url">
-    <div>
-      {{ description_problem }}
-    </div>
-  </q-timeline-entry>
+  <div>
+    <q-timeline-entry
+      style="
+        margin: 0px 0px 10px 0px;
+        background-color: black;
+        border-radius: 20px;
+        padding: 5px 10px;
+      "
+      color="grey"
+      :title="problem_title"
+      :subtitle="date"
+      :avatar="pp_url"
+    >
+      <div>
+        {{ description_problem }}
+      </div>
+    </q-timeline-entry>
+  </div>
 </template>
 
 <script>

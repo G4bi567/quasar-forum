@@ -1,4 +1,4 @@
-<template>
+<template style="box-sizing: border-box">
   <q-layout view="hhh LpR fff">
     <q-header
       reveal
@@ -28,7 +28,12 @@
           />
           Forum Csud
         </q-toolbar-title>
-
+        <q-btn
+          @click="turnmode"
+          color="secondary"
+          icon-right="mail"
+          label="On Right"
+        />
         <q-input
           dark
           dense
@@ -130,7 +135,7 @@
     >
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container style="background-color: grey">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -199,6 +204,7 @@ export default defineComponent({
   setup() {
     const leftDrawerOpen = ref(false);
     const rightDrawerOpen = ref(false);
+    const modeView = ref(true);
 
     return {
       leftDrawerOpen,
@@ -209,6 +215,10 @@ export default defineComponent({
       rightDrawerOpen,
       toggleRightDrawer() {
         rightDrawerOpen.value = !rightDrawerOpen.value;
+      },
+      turnmode() {
+        modeView.value != modeView.value;
+        console.log(modeView);
       },
     };
   },
