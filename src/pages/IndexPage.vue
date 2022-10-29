@@ -1,5 +1,10 @@
 <template>
-  <div style="margin: 20px">
+  <div
+    texte-center
+    style="margin: 20px"
+    class="column justify-center align-center"
+  >
+    <q-timeline-entry heading> Récents </q-timeline-entry>
     <Post />
   </div>
 </template>

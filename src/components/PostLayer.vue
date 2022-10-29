@@ -1,21 +1,9 @@
 <template>
-  <div class="row justify-center">
-    <q-timeline-entry heading>{{Title}}</q-timeline-entry>
-    <q-timeline-entry
-      title="{{Probleme-title}}"
-      subtitle="{{date}}"
-      avatar="{{photo-profil}}"
-    >
-      <div>
-        {{problem-description}}
-         <q-img
-          :src="{{}}"
-          spinner-color="white"
-          style="height: 140px; max-width: 150px"
-        />
-      </div>
-    </q-timeline-entry>
-  </div>
+  <q-timeline-entry :title="problem_title" :subtitle="date" :avatar="pp_url">
+    <div>
+      {{ description_problem }}
+    </div>
+  </q-timeline-entry>
 </template>
 
 <script>
@@ -24,7 +12,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'PostLayer',
   props: {
-    title: {
+    problem: {
       type: String,
       required: true,
     },
@@ -34,12 +22,12 @@ export default defineComponent({
       default: '',
     },
 
-    link: {
+    description_problem: {
       type: String,
       default: '#',
     },
 
-    icon: {
+    pp_profil: {
       type: String,
       default: '',
     },
