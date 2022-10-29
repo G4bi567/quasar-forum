@@ -12,7 +12,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'PostLayer',
   props: {
-    problem: {
+    problem_title: {
       type: String,
       required: true,
     },
@@ -24,12 +24,12 @@ export default defineComponent({
 
     description_problem: {
       type: String,
-      default: '#',
+      default: '',
     },
 
     pp_profil: {
       type: String,
-      default: '',
+      default: '#',
     },
   },
 });
