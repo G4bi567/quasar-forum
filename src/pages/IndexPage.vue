@@ -25,6 +25,14 @@
         :key="problem.problem_title"
         v-bind="problem"
       />
+      <q-pagination
+        v-model="current"
+        max="5"
+        direction-links
+        flat
+        color="grey"
+        active-color="primary"
+      />
     </div>
   </div>
   <div v-show="mode == false">bonjour</div>
